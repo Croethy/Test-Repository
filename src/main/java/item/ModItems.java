@@ -12,7 +12,7 @@ import java.util.function.Function;
 
 public class ModItems {
     //tutorial stuff below
-// helper method:
+// helper method
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
 
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(TestingMod.MOD_ID, name),
