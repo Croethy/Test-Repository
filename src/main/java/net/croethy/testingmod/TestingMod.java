@@ -15,6 +15,7 @@ public class TestingMod implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	// Comment
 	// Woah another comment!
+
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
