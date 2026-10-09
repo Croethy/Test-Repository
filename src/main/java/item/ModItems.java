@@ -15,6 +15,7 @@ import java.util.function.Function;
 public class ModItems {
     //tutorial stuff below
     public static final Item SIFTITE = registerItem("siftite", Item::new);
+    public static final Item RAW_SIFTITE = registerItem("raw_siftite", Item::new);
 // helper method
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
 
@@ -26,5 +27,6 @@ public class ModItems {
         TestingMod.LOGGER.info("registering items for" + TestingMod.MOD_ID);
 // Putting item on creative mode tab
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> output.accept(SIFTITE));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> output.accept(RAW_SIFTITE));
     }
 }
