@@ -1,4 +1,5 @@
 {
   "item.testing-mod.siftite": "Siftite",
-  "item.testing-mod.raw_siftite": "Raw Siftite"
+  "item.testing-mod.raw_siftite": "Raw Siftite",
+  "block.testing-mod.sift_fuzz": "Sift Fuzz"
 }

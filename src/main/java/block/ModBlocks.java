@@ -1,23 +1,26 @@
 package block;
 
 import net.croethy.testingmod.TestingMod;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 
 import java.util.function.Function;
 
 public class ModBlocks {
 
-    public static final Block SIFT_FUZZ = registerBlock("Sift Fuzz", properties -> new Block(properties.strength(4f)
-                    .requiresCorrectToolForDrops().sound(SoundType.NYLIUM))
+    public static final Block SIFT_FUZZ = registerBlock("sift_fuzz", properties -> new Block(properties.strength(4f)
+                    .mapColor(MapColor.GRASS).randomTicks().strength(0.6F).sound(SoundType.NYLIUM))
 
             );
 
@@ -41,5 +44,7 @@ public class ModBlocks {
 
     public static void registerModBlocks() {
         TestingMod.LOGGER.info("Registering Mod Blocks for" + TestingMod.MOD_ID);
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(output -> output.accept(SIFT_FUZZ));
+
     }
 }
